@@ -25,4 +25,5 @@ Route::get('/buildings-map', 'BuildingsMapController@index');
 
 
 
-Route::get('/put-markers-map', 'BuildingsMapController@putMarkers');
+Route::get('/put-markers-map', 'AlertMapController@putMarkers');
+Route::post('/save-alert-marker', 'AlertMapController@saveMarker');

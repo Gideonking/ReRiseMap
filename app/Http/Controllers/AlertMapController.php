@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Models\Pin;
 
-class BuildingsMapController extends Controller
+class AlertMapController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,6 +15,23 @@ class BuildingsMapController extends Controller
     public function index()
     {
         return view('buildings_map');
+    }
+
+    public function putMarkers()
+    {
+        return view('put_markers_map');
+    }
+    
+
+    // save pin to database
+    public function saveMarker(Request $request)
+    {
+        // dd($request);
+        $response = array(
+          'status' => 'success',
+          'msg' => $request->message . $request->details .'added',
+        );
+        return response()->json($response); 
     }
 
 

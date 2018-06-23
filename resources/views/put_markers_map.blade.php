@@ -9,6 +9,15 @@
       <h1>
           Alert map - adauga locatia ta
       </h1>
+      <div class="row form-group">
+
+      <label for="details">Adauga o descriere</label>
+      <br>
+      <textarea class="form-input" name="details" id="details"></textarea>
+            <div class="writeinfo">io</div>   
+      </div>
+        
+        <!-- <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}"> -->
       
       <div class="pac-card" id="pac-card">
       <div>
@@ -150,6 +159,34 @@
       map: map
     });
     markers.push(marker);
+    alert(marker);
+    alert(marker.position);
+    alert(marker.position.lat());
+
+    var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+    
+    $.ajax({
+          /* the route pointing to the post function */
+          url: '/save-alert-marker',
+          type: 'POST',
+          /* send the csrf-token and the input to the controller */
+          // data: {_token: CSRF_TOKEN, message:$(".getinfo").val()},
+          data: {
+            _token: CSRF_TOKEN, 
+            message: "hello marker",
+            details: $('details').val()
+          },
+          dataType: 'JSON',
+          /* remind that 'data' is the response of the AjaxController */
+          success: function (data) { 
+              alert("success");
+              $(".writeinfo").append(data.msg); 
+          },
+          error: function (data) { 
+              alert("error");
+              $(".writeinfo").append(data.msg); 
+          }
+      }); 
   }
   
   function setMapOnAll(map){
