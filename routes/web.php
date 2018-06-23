@@ -18,3 +18,7 @@ Route::get('/', function () {
 
 
 Route::get('/compare-images', 'ImageCompareController@index');
+
+
+
+Route::get('/buildings-map', 'BuildingsMapController@index');

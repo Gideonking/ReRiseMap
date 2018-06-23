@@ -158,7 +158,6 @@ concentrată pe elaborarea și implementarea de soluții pentru reducerea riscul
                 <li>
                   Adăpostiţi-vă sub o masă, un birou sau o piesă solidă de mobilier şi ţineţi-vă bine de aceasta.
                 </li>
-              
             </div>
           </div>
 
@@ -243,18 +242,17 @@ concentrată pe elaborarea și implementarea de soluții pentru reducerea riscul
           <div class="widget-contact row">
             <div class="col-lg-6">
               <address>
-          <strong>@ReRise.org</strong><br>
-				  <a href="http://rerise.org"></a>http://rerise.org <br>
-				  <abbr title="Phone">P:</abbr> 0434 432 234
-				</address>
+                <strong>@ReRise.org</strong><br>
+				          <a href="http://rerise.org">http://rerise.org </a><br>
+				          <abbr title="Phone">P:</abbr> 0434 432 234
+				      </address>
             </div>
 
             <div class="col-lg-6">
               <address>
-				  <strong>Email</strong><br>
-				  <a href="mailto:#">office@rerise.org</a><br/>
-				</address>
-
+				        <strong>Email</strong><br>
+				        <a href="mailto:#">office@rerise.org</a><br/>
+				      </address>
             </div>
           </div>
         </div>
@@ -267,9 +265,24 @@ concentrată pe elaborarea și implementarea de soluții pentru reducerea riscul
 
   <footer>
     <div class="container">
+
+          <div class="row">
+            <div class="col-lg-12">
+              <address>
+                <strong>@ReRise.org</strong><br>
+                  <a href="http://rerise.org">http://rerise.org </a><br>
+                  <abbr title="Phone">P:</abbr> 0434 432 234
+                  <br>
+                  <br>
+                  <strong>Email</strong><br>
+
+                <a href="mailto:#">office@rerise.org</a><br/>
+              </address>
+            </div>
+
       <div class="row">
         <div class="col-md-12 col-lg-12">
-          <p>&copy; Ninestars - Theme</p>
+          <p>&copy; FSociety</p>
           <div class="credits">
             <!-- 
               All the links in the footer should remain intact. 
