@@ -16,6 +16,13 @@ class BuildingsMapController extends Controller
         return view('buildings_map');
     }
 
+    public function putMarkers()
+    {
+        return view('put_markers_map');
+    }
+    
+
+
     /**
      * Show the form for creating a new resource.
      *

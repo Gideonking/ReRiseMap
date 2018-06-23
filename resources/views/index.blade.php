@@ -55,7 +55,7 @@
           <!-- /gn-scroller -->
         </nav>
       </li>
-      <!-- <li><a href="index.html">ReRise</a></li> -->
+      <li><a href="/">ReRise</a></li>
       <li><b>Linie urgenta Re-Rise : 0434 432 234</b></li>
       <li class="hidden-xs">
         <ul class="company-social">
@@ -70,7 +70,7 @@
   <section id="intro" class="intro">
     <div class="slogan">
       <h1>ReRise</h1>
-      <p>Re:Rise este o asociație non-profit <br>concentrată pe elaborarea și implementarea de soluții pentru reducerea riscului seismic.</p>
+      <p><b>Re:Rise este o asociație non-profit <br>concentrată pe elaborarea și implementarea de soluții pentru reducerea riscului seismic.</b></p>
       <a href="#about" class="btn btn-skin scroll">Vezi harta</a>
     </div>
   </section>
