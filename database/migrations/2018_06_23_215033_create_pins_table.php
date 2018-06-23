@@ -15,7 +15,7 @@ class CreatePinsTable extends Migration
     {
         Schema::create('pins', function (Blueprint $table) {
             $table->increments('id');
-            $table->softDeletes();
+            // $table->softDeletes();
             $table->string('address')->nullable();
             $table->text('details')->nullable();
             $table->decimal('lat', 15,10);

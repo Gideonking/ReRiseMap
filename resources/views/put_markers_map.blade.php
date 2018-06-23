@@ -161,7 +161,8 @@
     markers.push(marker);
     alert(marker);
     alert(marker.position);
-    alert(marker.position.lat());
+    var markerLat = marker.position.lat();
+    var markerLng = marker.position.lng();
 
     var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
     
@@ -174,7 +175,9 @@
           data: {
             _token: CSRF_TOKEN, 
             message: "hello marker",
-            details: $('details').val()
+            lat: markerLat,
+            lng: markerLng,
+            details: $('#details').val()
           },
           dataType: 'JSON',
           /* remind that 'data' is the response of the AjaxController */

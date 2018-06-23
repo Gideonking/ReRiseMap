@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Models\Pin;
+use App\Models\Pin;
 
 class AlertMapController extends Controller
 {
@@ -26,7 +26,8 @@ class AlertMapController extends Controller
     // save pin to database
     public function saveMarker(Request $request)
     {
-        // dd($request);
+        $p = Pin::create($request->except(['message', '_token']));
+
         $response = array(
           'status' => 'success',
           'msg' => $request->message . $request->details .'added',
