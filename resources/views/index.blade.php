@@ -135,14 +135,6 @@ concentrată pe elaborarea și implementarea de soluții pentru reducerea riscul
                 <li>
                   Nu montaţi instalaţii grele (antene, instalaţii de ventilaţie/climatizare, etc.) pe elementele structurale sau nestructurale ale clădirii, dacă acestea afectează structura de rezistenţă.
                 </li>
-                  
-                <li>
-                  Pregătiţi-vă rucsacul pentru situaţii de urgenţă: rucsacul pentru situaţii de urgenţă conţine obiecte care vă ajută să supravieţuiţi timp de 3-5 zile, în cazul în care este nevoie să părăsiţi locuinţa.
-                <li>
-                  
-                <li>
-                  Priviţi în locuinţa dumneavoastră şi încercaţi să vă imaginaţi ce ar putea să se întâmple în fiecare cameră dacă s-ar produce un cutremur.
-                </li>
               </ul>
 
             </div>
@@ -157,7 +149,16 @@ concentrată pe elaborarea și implementarea de soluții pentru reducerea riscul
             </div>
             <div class="service-desc">
               <h5>In timpul evenimentului</h5>
-              <p>Vestibulum tincidunt enim in pharetra malesuada. Duis semper magna metus electram accommodare.</p>
+               <li>
+                  Adăpostiţi-vă imediat într-un loc sigur şi rămâneţi calm pană la încetarea cutremurului.
+                </li>
+                <li>
+                  Dacă sunteţi în interiorul unei clădiri rămâneţi pe loc, nu încercaţi să ieşi afară şi nu vă duceţi pe balcon.
+                </li>
+                <li>
+                  Adăpostiţi-vă sub o masă, un birou sau o piesă solidă de mobilier şi ţineţi-vă bine de aceasta.
+                </li>
+              
             </div>
           </div>
 
@@ -171,14 +172,14 @@ concentrată pe elaborarea și implementarea de soluții pentru reducerea riscul
             <div class="service-desc">
               <h5>Dupa eveniment</h5>
               <ul>
-                <li>
-                  sfsdfsdf
-                </li>
-                <li>
-                  sfsdfsdf
-                </li>
+                 <li>
+                Verificaţi dacă sunteţi răniţi şi apoi uitaţi-vă şi la persoanele din jur. În cazul în care sunt răniţi, asiguraţi primul ajutor, doar dacă vă pricepeţi.
+              </li>
+              <li>
+                Fiţi atenţi la scări. S-ar putea ca mişcarea seismică să fi afectat rezistenţa acestora.
+              </li>
+              
               </ul>
-              <p>Vestibulum tincidunt enim in pharetra malesuada. Duis semper magna metus electram accommodare.</p>
             </div>
           </div>
 
