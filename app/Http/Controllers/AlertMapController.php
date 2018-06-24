@@ -19,7 +19,7 @@ class AlertMapController extends Controller
 
     public function putMarkers()
     {
-        $markers = Pin::all();
+        $markers = Pin::where('pin_type_id', 1)->get();
         return view('put_markers_map', compact('markers'));
     }
     
@@ -41,6 +41,7 @@ class AlertMapController extends Controller
         $request->session()->flash('message', 'Alerta adaugata pe harta.');
         $request->session()->flash('message-type', 'success');
 
+        dd($p);
         return response()->json($response); 
     }
 

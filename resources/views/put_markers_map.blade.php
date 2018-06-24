@@ -235,7 +235,8 @@
             message: "hello marker",
             lat: markerLat,
             lng: markerLng,
-            details: $('#details').val()
+            details: $('#details').val(),
+            pin_type_id: 1
           },
           dataType: 'JSON',
           /* remind that 'data' is the response of the AjaxController */

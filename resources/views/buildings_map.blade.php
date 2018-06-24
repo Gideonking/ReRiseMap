@@ -8,7 +8,6 @@
     <div>
       <h1>ReRiseMap</h1>
 
-      @foreach($imagedata as $imgdata)
         <div class="row text-center">
           <div class="col-md-3 col-md-offset-3 text-center">
             <img src="{{ asset($imgdata['image1'])}}" class="img img-responsive">
@@ -21,8 +20,8 @@
         <div class="row text-center">
           <p>Locatie: lat {{ $imgdata['lat'] }}, lng {{ $imgdata['lng'] }}</p>
         </div> 
-        @endforeach
 
+        <a href="/buildings-map/{{ ($imgId+1) % $nrImg}}" class="btn btn-primary">Urmatoarele imagini</a>
 
       <div class="pac-card" id="pac-card">
       <div>
@@ -69,16 +68,38 @@
 
         var bucharest = {lat: 44.439663, lng: 26.096306};
 
-          map = new google.maps.Map(document.getElementById('map'), {
+        map = new google.maps.Map(document.getElementById('map'), {
           center: bucharest,
           zoom: 12
         });
 
-        map.addListener('click', function(event) {
-          addMarker(event.latLng);
-        });
+
+        @foreach($markers as $marker)
+
+            var marker = new google.maps.Marker({
+              position: new google.maps.LatLng({{ $marker->lat }} , {{ $marker->lng }}),
+              map: map
+            });
+
+        @endforeach
+
+        // map.addListener('click', function(event) {
+        //   addMarker(event.latLng);
+        // });
+
+    //     var marker = new google.maps.Marker({
+    //       location: new google.maps.LatLng( , {{$imgdata['lng']}}),
+    //       map: map
+    // });
+        var newM = {
+          lat: {{$imgdata['lat']}},
+          lng: {{$imgdata['lng']}}
+        }
 
         addMarker(bucharest);
+
+        addMarker(newM);
+
 
         var card = document.getElementById('pac-card');
         var input = document.getElementById('pac-input');
@@ -158,12 +179,42 @@
               autocomplete.setOptions({strictBounds: this.checked});
             });
       }
+
       function addMarker(location){
     var marker = new google.maps.Marker({
       position: location,
       map: map
     });
     markers.push(marker);
+
+      var markerLat = marker.position.lat();
+    var markerLng = marker.position.lng();
+
+    var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+    
+    $.ajax({
+          /* the route pointing to the post function */
+          url: '/save-alert-marker',
+          type: 'POST',
+          /* send the csrf-token and the input to the controller */
+          // data: {_token: CSRF_TOKEN, message:$(".getinfo").val()},
+          data: {
+            _token: CSRF_TOKEN, 
+            message: "hello marker",
+            lat: markerLat,
+            lng: markerLng,
+            details: $('#details').val(),
+            pin_type_id: 2
+          },
+          dataType: 'JSON',
+          /* remind that 'data' is the response of the AjaxController */
+          success: function (data) { 
+               $('#details').val("");
+          },
+          error: function (data) { 
+              $(".writeinfo").append(data.msg); 
+          }
+      }); 
   }
   
   function setMapOnAll(map){
@@ -184,6 +235,12 @@
     clearMarkers();
     markers = [];
   }
+
+
+  setTimeout(function(){
+    window.location.replace("/buildings-map/{{($imgId+1) % $nrImg}}");
+         },120000);
+
     </script>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>

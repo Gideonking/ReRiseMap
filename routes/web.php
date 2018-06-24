@@ -21,8 +21,9 @@ Route::get('/compare-images', 'ImageCompareController@index');
 
 
 
-Route::get('/buildings-map', 'BuildingsMapController@index');
+Route::get('/buildings-map/{id}', 'BuildingsMapController@index');
 
+// Route::get('/buildings-map-data', 'BuildingsMapController@processData')->name('buildings-map-data');
 
 
 Route::get('/put-markers-map', 'AlertMapController@putMarkers');
