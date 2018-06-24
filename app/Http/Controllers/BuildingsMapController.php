@@ -13,7 +13,28 @@ class BuildingsMapController extends Controller
      */
     public function index()
     {
-        return view('buildings_map');
+        $imagedata = [
+            [
+                'image1' => 'img/drone/image1_1.jpeg',
+                'image2' => 'img/drone/image1_2.jpeg',
+                'lat'   => 46.3,
+                'lng'   => 22.3
+            ],
+            [
+                'image1' => 'img/drone/image2_1.png',
+                'image2' => 'img/drone/image2_2.png',
+                'lat'   => 45.3,
+                'lng'   => 22.3
+            ],
+            [
+                'image1' => 'img/drone/image3_1.jpeg',
+                'image2' => 'img/drone/image3_2.jpeg',
+                'lat'   => 43.3,
+                'lng'   => 23.3
+            ]
+        ];
+        // dd($imagedata);
+        return view('buildings_map', compact('imagedata'));
     }
 
 

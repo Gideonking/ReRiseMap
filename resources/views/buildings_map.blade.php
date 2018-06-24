@@ -7,7 +7,23 @@
   <section class="home-section text-center">
     <div>
       <h1>ReRiseMap</h1>
-      
+
+      @foreach($imagedata as $imgdata)
+        <div class="row text-center">
+          <div class="col-md-3 col-md-offset-3 text-center">
+            <img src="{{ asset($imgdata['image1'])}}" class="img img-responsive">
+          </div>
+          <div class="col-md-3">
+            <img src="{{ asset($imgdata['image2'])}}" class="img img-responsive">
+          </div>
+        </div>
+
+        <div class="row text-center">
+          <p>Locatie: lat {{ $imgdata['lat'] }}, lng {{ $imgdata['lng'] }}</p>
+        </div> 
+        @endforeach
+
+
       <div class="pac-card" id="pac-card">
       <div>
         <div id="title">

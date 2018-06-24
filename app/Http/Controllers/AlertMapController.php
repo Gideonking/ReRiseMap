@@ -29,10 +29,18 @@ class AlertMapController extends Controller
     {
         $p = Pin::create($request->except(['message', '_token']));
 
+        // Alert::info('Alerta adaugata pe harta');
+
         $response = array(
           'status' => 'success',
           'msg' => $request->message . $request->details .'added',
+          'message' => 'Alerta adaugata pe harta',
+          'message-type' => 'success'
         );
+
+        $request->session()->flash('message', 'Alerta adaugata pe harta.');
+        $request->session()->flash('message-type', 'success');
+
         return response()->json($response); 
     }
 

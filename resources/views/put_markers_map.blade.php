@@ -9,6 +9,16 @@
       <h1>
           Alert map - adauga locatia ta
       </h1>
+
+      <div class="row">
+        <label class="checkbox-inline" style="color:red"><b><input type="checkbox" value="">Urgenta medicala</b></label>
+        <label class="checkbox-inline"  style="color:blue"><b><input type="checkbox" value="">Acces blocat</b></label>
+        <label class="checkbox-inline"  style="color:green"><b><input type="checkbox" value="">Scurgeri de gaz</b></label> 
+        <label class="checkbox-inline"  style="color:orange"><b><input type="checkbox" value="">Incendiu</b></label> 
+
+      </div>
+
+
       <div class="row form-group">
 
       <label for="details">Adauga o descriere</label>
@@ -55,6 +65,12 @@
     </div>
 
     </div>
+    @if(Session::has('message'))
+    <div class="alert alert-{{ Session::get('message-type') }} alert-dismissable">
+        <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+        <i class="glyphicon glyphicon-{{ Session::get('message-type') == 'success' ? 'ok' : 'remove'}}"></i> {{ Session::get('message') }}
+    </div>
+@endif
   </section>
   
  <script>
@@ -225,6 +241,9 @@
           /* remind that 'data' is the response of the AjaxController */
           success: function (data) { 
               $(".writeinfo").append(data.msg); 
+               alert('Alerta adaugata pe harta\n' + "Descriere: " +$('#details').val());
+
+               $('#details').val("");
           },
           error: function (data) { 
               $(".writeinfo").append(data.msg); 

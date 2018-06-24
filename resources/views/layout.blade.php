@@ -50,7 +50,7 @@
                 <a href="/put-markers-map" class="gn-icon gn-icon-download">Sunt in pericol</a>
               </li>
               <li>
-                <a href="/buildings-map" class="gn-icon gn-icon-download">Harta</a>
+                <a href="/buildings-map" class="gn-icon gn-icon-download">Harta cladiri in pericol</a>
               </li>
               <li><a href="#clasa1" class="gn-icon gn-icon-help">Clasa I de risc seismic</a></li>
               <li><a href="#clasa2" class="gn-icon gn-icon-help">Clasa a II-a de risc seismic</a></li>
