@@ -14,7 +14,7 @@
       <label for="details">Adauga o descriere</label>
       <br>
       <textarea class="form-input" name="details" id="details"></textarea>
-            <div class="writeinfo">io</div>   
+            <!-- <div class="writeinfo">io</div>    -->
       </div>
         
         <!-- <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}"> -->
@@ -72,8 +72,42 @@
         map.addListener('click', function(event) {
           addMarker(event.latLng);
         });
+  
 
-        addMarker(bucharest);
+        @foreach($markers as $marker)
+         var contentString ='<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+              '<div id="bodyContent">'+ "<p>" + "d {{$marker->details}}"+
+            '</p></div></div>';
+
+        var infowindow = new google.maps.InfoWindow({
+          content: contentString
+        });
+
+
+            var marker = new google.maps.Marker({
+              position: new google.maps.LatLng({{ $marker->lat }} , {{ $marker->lng }}),
+              map: map
+            });
+
+             marker.addListener('mouseover', function() {
+          infowindow.open(map, marker);
+        });
+             marker.addListener('click', function() {
+              console.log(contentString);
+          infowindow.open(map, marker);
+        });
+
+        @endforeach
+
+    // var marker = new google.maps.Marker({
+    //   position: location,
+    //   map: map,
+    //   icon:image
+    // });
+
+        // addMarker(bucharest);
 
         var card = document.getElementById('pac-card');
         var input = document.getElementById('pac-input');
@@ -92,7 +126,10 @@
         var infowindow = new google.maps.InfoWindow();
         var infowindowContent = document.getElementById('infowindow-content');
         infowindow.setContent(infowindowContent);
-        var marker = new google.maps.Marker({
+      
+ 
+
+       var marker = new google.maps.Marker({
           map: map,
           anchorPoint: new google.maps.Point(0, -29)
         });
@@ -107,6 +144,8 @@
             window.alert("No details available for input: '" + place.name + "'");
             return;
           }
+          addMarker(place.geometry.location);
+
 
           // If the place has a geometry, then present it on a map.
           if (place.geometry.viewport) {
@@ -154,13 +193,16 @@
             });
       }
       function addMarker(location){
+          var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
+
     var marker = new google.maps.Marker({
       position: location,
-      map: map
+      map: map,
+      icon:image
     });
     markers.push(marker);
-    alert(marker);
-    alert(marker.position);
+    // alert(marker);
+    // alert(marker.position);
     var markerLat = marker.position.lat();
     var markerLng = marker.position.lng();
 
@@ -182,14 +224,14 @@
           dataType: 'JSON',
           /* remind that 'data' is the response of the AjaxController */
           success: function (data) { 
-              alert("success");
               $(".writeinfo").append(data.msg); 
           },
           error: function (data) { 
-              alert("error");
               $(".writeinfo").append(data.msg); 
           }
       }); 
+
+    return marker;
   }
   
   function setMapOnAll(map){

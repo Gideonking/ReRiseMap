@@ -19,7 +19,8 @@ class AlertMapController extends Controller
 
     public function putMarkers()
     {
-        return view('put_markers_map');
+        $markers = Pin::all();
+        return view('put_markers_map', compact('markers'));
     }
     
 
