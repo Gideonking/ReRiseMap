@@ -147,7 +147,7 @@
          var contentString ='<div id="content">'+
             '<div id="siteNotice">'+
             '</div>'+
-              '<div id="bodyContent">'+ "<p>" + "d {{$marker->details}}"+
+              '<div id="bodyContent">'+ "<p>" + "{{$marker->details}}"+
             '</p></div></div>';
 
         var infowindow = new google.maps.InfoWindow({
@@ -158,7 +158,7 @@
             var marker = new google.maps.Marker({
               position: new google.maps.LatLng({{ $marker->lat }} , {{ $marker->lng }}),
               map: map,
-              title: "{{$marker->details}}"
+              title: "detalii: {{$marker->details}}"
             });
 
              marker.addListener('mouseover', function() {
@@ -268,7 +268,8 @@
     var marker = new google.maps.Marker({
       position: location,
       map: map,
-      icon:image
+      icon:image,
+      title: $('#details').val()
     });
     markers.push(marker);
     // alert(marker);
