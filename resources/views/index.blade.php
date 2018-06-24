@@ -7,7 +7,7 @@
     <div class="slogan">
       <h1>ReRise</h1>
       <p><b>Re:Rise este o asociație non-profit <br>concentrată pe elaborarea și implementarea de soluții pentru reducerea riscului seismic.</b></p>
-      <a href="/buildings-map" class="btn btn-skin scroll">Vezi harta</a>
+      <a href="/buildings-map/0" class="btn btn-skin scroll">Vezi harta</a>
     </div>
   </section>
   <!-- /Section: intro -->

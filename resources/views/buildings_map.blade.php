@@ -19,6 +19,7 @@
 
         <div class="row text-center">
           <p>Locatie: lat {{ $imgdata['lat'] }}, lng {{ $imgdata['lng'] }}</p>
+          <p>Compare: {{ $compareMessage }}</p>
         </div> 
 
         <a href="/buildings-map/{{ ($imgId+1) % $nrImg}}" class="btn btn-primary">Urmatoarele imagini</a>
@@ -118,6 +119,9 @@
         var infowindow = new google.maps.InfoWindow();
         var infowindowContent = document.getElementById('infowindow-content');
         infowindow.setContent(infowindowContent);
+
+
+        
         var marker = new google.maps.Marker({
           map: map,
           anchorPoint: new google.maps.Point(0, -29)

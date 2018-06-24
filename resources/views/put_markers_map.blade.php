@@ -10,6 +10,7 @@
           Alert map - adauga locatia ta
       </h1>
 
+
       <div class="row">
         <label class="checkbox-inline" style="color:red"><b><input type="checkbox" value="">Urgenta medicala</b></label>
         <label class="checkbox-inline"  style="color:blue"><b><input type="checkbox" value="">Acces blocat</b></label>
@@ -27,6 +28,8 @@
             <!-- <div class="writeinfo">io</div>    -->
       </div>
         
+
+      <button id="location" name="location" class="btn btn-danger">Adauga locatia curenta</button>
         <!-- <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}"> -->
       
       <div class="pac-card" id="pac-card">
@@ -73,7 +76,37 @@
 @endif
   </section>
   
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  
+
  <script>
+
+      $('#location').click(function() {
+
+         if(navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+       
+     
+            infoWindow.setPosition(pos);
+            infoWindow.setContent('Locatia curenta');
+            infoWindow.open(map);
+            map.setCenter(pos);
+                addMarker(pos);
+
+          }, function() {
+            handleLocationError(true, infoWindow, map.getCenter());
+          });
+        }
+        else {
+          handleLocationError(false, infoWindow, map.getCenter());
+        }
+
+      });
+
       var markers = [];
 
       function initMap() {
@@ -85,10 +118,30 @@
           zoom: 12
         });
 
-        map.addListener('click', function(event) {
+         map.addListener('click', function(event) {
           addMarker(event.latLng);
         });
   
+     infoWindow = new google.maps.InfoWindow;
+        if(navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+
+            infoWindow.setPosition(pos);
+            infoWindow.setContent('Your curret location.');
+            infoWindow.open(map);
+            map.setCenter(pos);
+          }, function() {
+            handleLocationError(true, infoWindow, map.getCenter());
+          });
+        }
+        else {
+          handleLocationError(false, infoWindow, map.getCenter());
+        }
+
 
         @foreach($markers as $marker)
          var contentString ='<div id="content">'+
@@ -104,7 +157,8 @@
 
             var marker = new google.maps.Marker({
               position: new google.maps.LatLng({{ $marker->lat }} , {{ $marker->lng }}),
-              map: map
+              map: map,
+              title: "{{$marker->details}}"
             });
 
              marker.addListener('mouseover', function() {
@@ -272,10 +326,16 @@
     clearMarkers();
     markers = [];
   }
+
+
+function handleLocationEror(browserHasGeolocation, infoWindow, pos) {
+    infoWindow.setPosition(pos);
+    infoWindow.setContent(browserHasGeolocation ? 'Error: The Geolocation service failed' : 'Error: Your browser doesn\'t support geolocation');
+    infoWindow.open(map);
+  }
     </script>
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDuUyRkHWpdoe6MTege8frZbNco9cRNP1c&libraries=places&callback=initMap" async defer></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDuUyRkHWpdoe6MTege8frZbNco9cRNP1c&libraries=places&callback=initMap" async defer></script>
 
 
 
