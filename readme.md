@@ -11,7 +11,14 @@ The website consists of 3 parts:
 3. (experimental, in development) Map for showing buildings destroyed by the earthquake, by comparing images obtained from drones.
 
 
-Technologies used: Laravel, Google Maps API, JavaScript, PHP, HTML, CSS, Bootstrap.
+# Technologies used
+- Laravel
+- Google Maps API
+- JavaScript
+- PHP
+- HTML
+- CSS
+- Bootstrap.
 
 ## Members:
 - Diana Marusic - developer
