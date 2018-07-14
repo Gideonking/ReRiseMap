@@ -21,22 +21,19 @@ The website consists of 3 parts:
 - Bootstrap.
 
 ## Screenshots
-Solarized dark             |  Solarized Ocean
-:-------------------------:|:-------------------------:
-<img src="https://raw.githubusercontent.com/mdiannna/ReRiseMap/master/screenshots/Screenshot1.png" alt="" width="200" height="400" style="display:inline-block"/> | <img src="https://raw.githubusercontent.com/mdiannna/ReRiseMap/master/screenshots/Screenshot2.png" alt="" width="200" height="400"  style="display:inline-block" />
-:-------------------------:|:-------------------------:
+### Landing page
+![Screenshot1](https://raw.githubusercontent.com/mdiannna/ReRiseMap/master/screenshots/Screenshot1.png)
 
-![Screenshot1](https://raw.githubusercontent.com/mdiannna/ReRiseMap/master/screenshots/Screenshot1.png) | ![Screenshot2](https://raw.githubusercontent.com/mdiannna/ReRiseMap/master/screenshots/Screenshot2.png)
-:-------------------------:|:-------------------------:
+### Alert map
+![Screenshot2](https://raw.githubusercontent.com/mdiannna/ReRiseMap/master/screenshots/Screenshot2.png)
 
+
+### Buildings alert - compare images from drones
 ![Screenshot3](https://raw.githubusercontent.com/mdiannna/ReRiseMap/master/screenshots/Screenshot3.png)
+
 ![Screenshot4](https://raw.githubusercontent.com/mdiannna/ReRiseMap/master/screenshots/Screenshot4.png)
 
-<span>
-
-</span>
-
-## Members:
+## Hackathon Team Members:
 - Diana Marusic - developer
 - Vlad Popa - developer
 - Aliona Koroliova - business
