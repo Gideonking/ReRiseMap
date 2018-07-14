@@ -29,12 +29,6 @@ class BuildingsMapController extends Controller
                 'lng'   => 26.096306
             ],
             [
-                'image1' => 'img/drone/image3_1.jpeg',
-                'image2' => 'img/drone/image2_2.png',
-                'lat'   =>  44.439663, 
-                'lng'   => 26.096306
-            ],
-            [
                 'image1' => 'img/drone/image4_1.jpeg',
                 'image2' => 'img/drone/image4_2.jpeg',
                 'lat'   =>  44.427663, 

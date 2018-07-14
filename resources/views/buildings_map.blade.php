@@ -243,7 +243,7 @@
 
   setTimeout(function(){
     window.location.replace("/buildings-map/{{($imgId+1) % $nrImg}}");
-         },120000);
+         },12000);
 
     </script>
 
