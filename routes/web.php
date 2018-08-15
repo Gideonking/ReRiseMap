@@ -28,3 +28,8 @@ Route::get('/buildings-map/{id}', 'BuildingsMapController@index');
 
 Route::get('/put-markers-map', 'AlertMapController@putMarkers');
 Route::post('/save-alert-marker', 'AlertMapController@saveMarker');
+
+Route::get('/earthquakes/all-romania', 'RecentEarthquakeController@allRomania');
+Route::get('/earthquakes/raw', 'RecentEarthquakeController@raw');
+// Route::get('/cutremure', 'RecentEarthquakeController@index');
+
