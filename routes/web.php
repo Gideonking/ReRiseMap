@@ -31,5 +31,6 @@ Route::post('/save-alert-marker', 'AlertMapController@saveMarker');
 
 Route::get('/earthquakes/all-romania', 'RecentEarthquakeController@allRomania');
 Route::get('/earthquakes/raw', 'RecentEarthquakeController@raw');
+Route::get('/earthquakes/romania-past-hour', 'RecentEarthquakeController@pastHourRomania');
 // Route::get('/cutremure', 'RecentEarthquakeController@index');
 
