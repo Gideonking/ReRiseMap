@@ -130,6 +130,30 @@ concentrată pe elaborarea și implementarea de soluții pentru reducerea riscul
   <!-- /Section: services -->
 
 
+
+  <!-- Section: recent-earthquakes -->
+  <section id="recent-earthquakes" class="home-section text-center bg-gray">
+    <div class="heading-about marginbot-50">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2">
+
+            <div class="section-heading">
+              <h2>Cutremure recente</h2>
+              <ul>
+                <li><a href="/earthquakes/all-romania">În România</a></li>
+                <li><a href="/earthquakes/romania-past-hour">În România, ultima oră</a></li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+   
+  </section>
+  <!-- /Section: recent-earthquakes -->
+
   <!-- Section: contact -->
   <section id="contact" class="home-section text-center">
     <div class="heading-contact marginbot-50">
